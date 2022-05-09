@@ -1,0 +1,245 @@
+body {
+    background-color: #E5E5E5;
+}
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+}
+.logo {
+    position: absolute;
+    width: 120px;
+    height: 48px;
+    left: 40px;
+    top: 40px;
+    
+}
+
+.input input{
+    position: absolute;
+    width: 577px;
+    height: 48px;
+    left: 240px;
+    top: 168px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0a3871;
+}
+
+.mensaje {
+    position: absolute;
+    width: 400px;
+    height: 871px;
+    left: 1259px;
+    top: 40px;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    width: 680px;
+    height: 67px;
+    left: 240px;
+    top: 785px;
+}
+
+.encriptar {
+position: static;
+width: 328px;
+height: 67px;
+left: 0px;
+top: 0px;
+
+/* Dark blue/dark-blue-300 */
+background: #0A3871;
+border-radius: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+/* White */
+color: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 24px;
+}
+
+.decifrar {
+    position: static;
+    width: 328px;
+    height: 67px;
+    left: 352px;
+    top: 0px;
+    
+    /* Light gray */
+    background: #D8DFE8;
+    
+    /* Dark blue/dark-blue-300 */
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 24px;
+}
+
+.advertencia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    
+    position: absolute;
+    width: 229px;
+    height: 18px;
+    left: 269px;
+    top: 764px;
+
+}
+
+.advertencia .nota {
+    position: static;
+width: 205px;
+height: 18px;
+left: 24px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 150%;
+
+/* identical to box height, or 18px */
+
+/* Gray/gray-400 */
+color: #495057;
+
+opacity: 0.8;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 23px;
+}
+
+.advertencia img {
+    position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Gray/gray-400 */
+
+}
+
+input[type="text"]
+{
+    background: transparent;
+    border: none;
+}
+
+.noEncontrado{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    
+    /* or 29px */
+    text-align: center;
+    
+    /* Gray/gray-500 */
+    color: #343A40;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 16px 0px;
+}
+
+.ingrese {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+
+/* or 24px */
+text-align: center;
+
+/* Gray/gray-400 */
+color: #495057;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+margin: 16px 0px;
+}
+
+.display-none {
+    display: none;
+}
+
+.textoEncriptado{
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    
+    /* or 36px */
+    
+    /* Gray/gray-400 */
+    color: #495057;
+    position: absolute;
+    top: 10px;
+left: 40px;
+}
+
+.copiar{
+    position: absolute;
+width: 336px;
+height: 67px;
+left: 32px;
+top: 785px;
+    border: 1px solid #0A3871;
+border-radius: 24px;
+display: none;
+}
+
+.activo {
+    display: block;
+}

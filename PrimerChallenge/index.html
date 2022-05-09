@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/Vector.png" alt="logo">
+        </div>
+
+    </header>
+   
+    <div class="contenedor">
+        <div class="input">
+            <input placeholder="Ingrese el texto aqui" type="text">
+        </div>
+
+        <div class="mensaje">
+            <div class="lupa">
+                <img src="img/Muñeco.png" alt="">
+            </div>
+            <div class="mensajeDecifrar">
+                <p class="noEncontrado">Ningún mensaje fue encontrado</p>
+                <p class="ingrese">
+                    Ingresa el texto que desees encriptar o desencriptar
+                </p>
+            </div>
+            <p class="textoEncriptado"></p>
+            <button class="copiar">Copiar</button>
+
+
+        </div><!--mensaje-->
+    </div>
+    <div class="advertencia">
+        <img src="img/advertencia.png" alt="">
+        <p class="nota">Solo letras minúsculas y sin acentos</p>
+    </div>
+    <div class="botones">
+        
+        <button class="encriptar">Encriptar</button>
+        <button class="decifrar">Desincriptar</button>
+    </div>
+
+    
+    <div id="encriptar">
+
+    </div>
+
+    
+  
+    <script>
+        const contenido = document.querySelector(".mensaje");
+        var lupa = document.querySelector(".lupa");
+        var mensajeDecifrar = document.querySelector(".mensajeDecifrar");
+        var ingrese = document.querySelector(".ingrese");
+        var btnCopiar = document.querySelector(".copiar");
+        var input = document.querySelector("input");
+        input.value = '';
+        //inputV = input.value;
+        function encriptar(){
+            var textoEncriptado = "";
+            var texto = input.value;
+            if (input.value != ""){
+            for (var i = 0; i < texto.length; i++){
+                
+                if(texto[i] == "e"){
+                    
+                    textoEncriptado = textoEncriptado + "enter";
+                } else if (texto[i] == "i"){
+                    textoEncriptado = textoEncriptado + "imes";
+                }else if (texto[i] == "a"){
+                    textoEncriptado = textoEncriptado + "ai";
+                }else if (texto[i] == "o"){
+                    textoEncriptado = textoEncriptado + "ober";
+                }else if (texto[i] == "u"){
+                    textoEncriptado = textoEncriptado + "ufat";
+                }else{
+                textoEncriptado = textoEncriptado + texto[i];
+                }
+        }
+        //console.log(textoEncriptado);
+        lupa.classList.add('display-none');
+        mensajeDecifrar.classList.add('display-none');
+        ingrese.classList.add('display-none');
+        document.querySelector(".textoEncriptado").innerHTML += `<h3>${textoEncriptado}</h3> `
+        // const mensajeEncriptado = document.createElement('P');
+        // mensajeEncriptado.classList.add('textoEncriptado');
+        // mensajeEncriptado.textContent = textoEncriptado;
+        // contenido.appendChild(mensajeEncriptado);
+         btnCopiar.classList.add('activo');
+        // var copyText = textoEncriptado;
+        // //copyText.select(); 
+        // navigator.clipboard.writeText(copyText.value);
+        // alert("Copied the text: " + copyText.value);
+        //copiarTexto();
+        
+    }else {
+        alert("Debe ingresar un Texto");
+        
+    }
+        //document.getElementById("encriptar").innerHTML += `<h3>${textoEncriptado}</h3> `
+        
+            
+        }
+
+        function copiarTexto(){
+        //     var copyText = document.querySelector(".textoEncriptado").textContent;
+        //     //console.log(copyText);
+        //     navigator.clipboard.writeText(copyText.value);
+        // alert("Copied the text: " + copyText.value);
+
+        const str = document.querySelector('.textoEncriptado').innerText;
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  //alert(`Copied: ${str}`);
+  input.value = "";
+  input.focus();
+        }
+
+  
+function desencriptar(){
+    var textoDeci = document.querySelector(".textoEncriptado");
+    textoDeci.textContent = "";
+    //alert("sirve");
+
+    var textoDecifrado = "";
+    var cadena = input.value;
+for (var i = 0; i < cadena.length; i++){
+    textoDecifrado = textoDecifrado + cadena[i];
+    if (cadena[i] == "e"){
+        i = i + 4;
+    }else if (cadena[i] == "i"){
+        i = i + 3;
+    }else if (cadena[i] == "a"){
+        i = i + 1;
+    }else if (cadena[i] == "o"){
+        i = i + 3;
+    }else if (cadena[i] == "u"){
+        i = i + 3;
+    }
+    
+    
+}
+
+document.querySelector(".textoEncriptado").innerHTML += `<h3>${textoDecifrado}</h3> `;
+
+//document.write(textoDecifrado);
+}
+
+var btnEncriptar = document.querySelector(".encriptar");
+btnEncriptar.onclick = encriptar;
+var btnDecifrar = document.querySelector(".decifrar");
+btnDecifrar.onclick = desencriptar;
+
+
+btnCopiar.onclick = copiarTexto;
+
+        //encriptar();
+      //desencriptar("fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!");
+       
+    </script>
+</body>
+</html>
